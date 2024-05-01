@@ -1,0 +1,78 @@
+
+.login-wrapper {
+  margin: 0;
+  background-image: url('./Images/winter.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7); /* Change the last value (0.7) to set the opacity */
+}
+
+.login-container {
+  max-width: 350px;
+  padding: 20px;
+  border: 2px solid #a8a0a0 ;
+  border-radius: 5px;
+  background-color:;
+  
+}
+.login-container:hover {
+  box-shadow: 0 4px 8px 0 black;
+  transition: 0.3s;
+}
+
+h1{
+  color: #00215E;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Didot', serif;
+  margin-bottom: -5px;
+}
+.moto {
+  padding: 0;
+  margin: 0;
+  color: #2C4E80;
+  font-family: 'Pacifico', cursive;
+  font-weight: 50;
+  text-align: right;
+  margin-top: -5px; /* Add this line to remove the top margin */
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 94%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00215E;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2C4E80;
+  box-shadow: 0 2px 8px 0 grey;
+  transition: 0.3s;
+}
