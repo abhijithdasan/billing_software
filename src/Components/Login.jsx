@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import './Login.css'; // Import your CSS file
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import './Login.css'; 
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -18,8 +19,15 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Form submitted:', formData);
+    // Check email and password
+    if (formData.email === 'sixten@gmail.com' && formData.password === '12345') {
+      console.log('Login Successful');
+      // Redirect to Mainpage
+      navigate('/Mainpage');
+    } else {
+      console.log('Invalid Credentials');
+      // Handle incorrect email or password
+    }
   };
 
   const handleGoogleLogin = () => {
@@ -41,39 +49,35 @@ const Login = () => {
 
   return (
     <div className ="login-wrapper">
-      <div className="login-container">
-        <h1>Six Ten Travels</h1>
-        <p className='moto'>our customer is our first child</p>
-        <br />
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Password:</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" >Login</button>
-          <br /> <br/>
-          <button type="button" onClick={handleGoogleLogin}>
-             {/* Added the Google icon */}
-            Login with <FontAwesomeIcon icon={faGoogle} style={{ marginRight: '1px', color: 'blue' }} fade/>oogle
-          </button>
-        </form>
-      </div>
+    <div className="login-container">
+    <h1>Six Ten Travels</h1>
+    <br />
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" >Login</button>
+        <br /> <br/>
+        <button type="button" onClick={handleGoogleLogin}>Login with Google</button>
+      </form>
+    </div>
     </div>
   );
 };

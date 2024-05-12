@@ -1,22 +1,16 @@
-//import { BrowserRouter as Router, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Components/Login';
 import './App.css';
+import Mainpage from './Components/Mainpage';
 
 function App() {
-  // const [user, setUser] = useState(null);
-
-  // const handleLogin = (userData) => {
-  //   setUser(userData);
-  // };
-
-  // const handleLogout = () => {
-  //   setUser(null);
-  // };
-
   return (
-    <div>
-      <Login />
-    </div>
+    <Router>
+      <div>
+        <Route path="/" exact component={Login} />
+        <Route path="/mainpage" component={Mainpage} />
+      </div>
+    </Router>
   );
 }
 
